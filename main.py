@@ -17,6 +17,7 @@ def avg_course_grades(some_list, some_course=None):
 
 list_student = []
 list_lecturer = []
+list_reviewer = []
 
 
 class Student:
@@ -90,6 +91,7 @@ class Reviewer(Mentor):
         self.name = name
         self.surname = surname
         self.courses_attached = []
+        list_reviewer.append(self)
 
     def rate_hw(self, student, course, grade):
         if isinstance(student, Student) and course in self.courses_attached \
@@ -164,15 +166,16 @@ second_reviewer.rate_hw(second_student, 'Git', 6)  # only Python and Вводн�
 second_reviewer.rate_hw(second_student, 'Вводный курс', 10)  # not in courses_in_progress
 
 print('-------------------Студенты:')
-print(first_student.grades)   # test
-print(first_student)
-print(second_student.grades)   # test
-print(second_student)
+for i in list_student:
+    # print(i.grades)   # test
+    print(i)
+
 print('----Статистика по студентам:')
 print(f'Сравнение студентов {first_student.name} {first_student.surname} < {second_student.name} {second_student.name} '
       f'= {first_student < second_student}')
-print(f'Сравнение студентов {first_lecturer.name} {first_lecturer.surname} < {second_student.name} {second_student.name} '
-      f'= {first_lecturer < second_student}')
+print(
+    f'Сравнение студентов {first_lecturer.name} {first_lecturer.surname} < {second_student.name} {second_student.name} '
+    f'= {first_lecturer < second_student}')
 print(f'Средней оценка за домашние задания по всем студентам = '
       f'{avg_course_grades(list_student):.2f}')
 print(f'Средней оценка за домашние задания по всем студентам в рамках курса Вводный курс = '
@@ -183,17 +186,21 @@ print(f'Средней оценка за домашние задания по в
       f'{avg_course_grades(list_student, "Git"):.2f}')
 print(f'Средней оценка за домашние задания по всем студентам в рамках курса Java = '
       f'{avg_course_grades(list_student, "Java"):.2f}')
+
 print('\n----------------Проверяющие:')
-print(first_reviewer)
-print(second_reviewer)
+for i in list_reviewer:
+    # print(i.grades)   # test
+    print(i)
+
 print('\n--------------------Лекторы:')
-print(first_lecturer.grades)   # test
-print(first_lecturer)
-print(second_lecturer.grades)   # test
-print(second_lecturer)
+for i in list_lecturer:
+    # print(i.grades)   # test
+    print(i)
+
 print('\n-----Статистика по лекторам:')
-print(f'Сравнение лекторов {first_lecturer.name} {first_lecturer.surname} < {second_lecturer.name} {second_lecturer.name} '
-      f'= {first_lecturer < second_lecturer}')
+print(
+    f'Сравнение лекторов {first_lecturer.name} {first_lecturer.surname} < {second_lecturer.name} {second_lecturer.name} '
+    f'= {first_lecturer < second_lecturer}')
 print(f'Средней оценки за лекции всех лекторов = '
       f'{avg_course_grades(list_lecturer):.2f}')
 print(f'Средней оценки за лекции всех лекторов в рамках курса Вводный курс = '
@@ -204,7 +211,6 @@ print(f'Средней оценки за лекции всех лекторов 
       f'{avg_course_grades(list_lecturer, "Git"):.2f}')
 print(f'Средней оценки за лекции всех лекторов в рамках курса Java = '
       f'{avg_course_grades(list_lecturer, "Java"):.2f}')
-
 
 # Press the green button in the gutter to run the script.
 # if __name__ == '__main__':
