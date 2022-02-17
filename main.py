@@ -176,15 +176,15 @@ print(f'Сравнение студентов {first_student.name} {first_studen
 print(
     f'Сравнение студентов {first_lecturer.name} {first_lecturer.surname} < {second_student.name} {second_student.name} '
     f'= {first_lecturer < second_student}')
-print(f'Средней оценка за домашние задания по всем студентам = '
+print(f'Средняя оценка за домашние задания по всем студентам = '
       f'{avg_course_grades(list_student):.2f}')
-print(f'Средней оценка за домашние задания по всем студентам в рамках курса Вводный курс = '
+print(f'Средня оценка за домашние задания по всем студентам в рамках курса Вводный курс = '
       f'{avg_course_grades(list_student, "Вводный курс"):.2f}')
-print(f'Средней оценка за домашние задания по всем студентам в рамках курса Python = '
+print(f'Средня оценка за домашние задания по всем студентам в рамках курса Python = '
       f'{avg_course_grades(list_student, "Python"):.2f}')
-print(f'Средней оценка за домашние задания по всем студентам в рамках курса Git = '
+print(f'Средняя оценка за домашние задания по всем студентам в рамках курса Git = '
       f'{avg_course_grades(list_student, "Git"):.2f}')
-print(f'Средней оценка за домашние задания по всем студентам в рамках курса Java = '
+print(f'Средняя оценка за домашние задания по всем студентам в рамках курса Java = '
       f'{avg_course_grades(list_student, "Java"):.2f}')
 
 print('\n----------------Проверяющие:')
@@ -201,15 +201,15 @@ print('\n-----Статистика по лекторам:')
 print(
     f'Сравнение лекторов {first_lecturer.name} {first_lecturer.surname} < {second_lecturer.name} {second_lecturer.name} '
     f'= {first_lecturer < second_lecturer}')
-print(f'Средней оценки за лекции всех лекторов = '
+print(f'Средняя оценка за лекции всех лекторов = '
       f'{avg_course_grades(list_lecturer):.2f}')
-print(f'Средней оценки за лекции всех лекторов в рамках курса Вводный курс = '
+print(f'Средняя оценка за лекции всех лекторов в рамках курса Вводный курс = '
       f'{avg_course_grades(list_lecturer, "Вводный курс"):.2f}')
-print(f'Средней оценки за лекции всех лекторов в рамках курса Python = '
+print(f'Средняя оценка за лекции всех лекторов в рамках курса Python = '
       f'{avg_course_grades(list_lecturer, "Python"):.2f}')
-print(f'Средней оценки за лекции всех лекторов в рамках курса Git = '
+print(f'Средняя оценка за лекции всех лекторов в рамках курса Git = '
       f'{avg_course_grades(list_lecturer, "Git"):.2f}')
-print(f'Средней оценки за лекции всех лекторов в рамках курса Java = '
+print(f'Средняя оценка за лекции всех лекторов в рамках курса Java = '
       f'{avg_course_grades(list_lecturer, "Java"):.2f}')
 
 # Press the green button in the gutter to run the script.
